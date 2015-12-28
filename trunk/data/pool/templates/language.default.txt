@@ -1,0 +1,23 @@
+text = lang my test {:$abc:}'s {:$bcd:} text
+text2 = lang my test text2
+
+HTTP_404 = HTTP Error: 404
+
+HTTP_404_DETAIL = The page you wanted was not found on this server
+
+dear = Dear
+WeGotYourMessage = We got your message
+
+
+
+FORMAT_DEFAULTTIME = y-m-d H:i:s
+MESSAGE_ERROR_LOGIN_FAILED = Login failed: %s
+MESSAGE_ERROR_LOGOUT_FAILED = Login failed: %s
+
+MESSAGE_ERROR_NO_ERROR = No any error here.
+
+MESSAGE_SESSION_VERIFY_INVALID_ACCOUNTNAME = Your name is a joke
+
+MESSAGE_UPLOAD_FILE_NOT_ALLOWED = Your file: %s is disallowed for uploading.
+
+MESSAGE_UPLOAD_FILE_UPLOADED = File has been uploaded %s Congrats!

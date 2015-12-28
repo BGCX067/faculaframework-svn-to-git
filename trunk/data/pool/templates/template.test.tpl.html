@@ -1,0 +1,55 @@
+{template header lang text = lang text2, :$Test|sdsad %s dsadsada: = :$Test | ABC %s D:}
+	{template message}
+	{if $checkvar == 1}
+		The Var is 1
+	{elseif $checkvar == 2}
+		The Var is 2
+	{else}
+		The Var is other
+	{/if}
+	<hr />
+	Now is: {:$Time|time:DEFAULTTIME:}
+	<hr />
+	<form action="" method="post">
+		<input type="hidden" name="token" value="{:$Session['Token']:}" />
+	{if !$Session['MemberID']}
+		<fieldset>
+			<label>Username:</label><br />
+			<input type="text" name="username" value="{:$Returned['username']:}" /><br />
+			<label>Password:</label><br />
+			<input type="password" name="password" /><br />
+			<input type="submit" name="submit" /><br />
+		</fieldset>
+	{else}
+		{:$Session['MemberName']:}<br />
+		{:$Session['MemberID']:}<br />
+		<input type="submit" name="submit" /><br />
+	</form>
+	
+	<form enctype="multipart/form-data" action="" method="post">
+		<fieldset>
+			<input type="file" name="upload[]" /><br />
+			<input type="file" name="upload[]" /><br />
+			<input type="file" name="upload[]" /><br />
+			<input type="file" name="upload[]" /><br />
+			<input type="file" name="upload[]" /><br />
+			<input type="file" name="upload[]" /><br />
+		</fieldset>
+		<input type="submit" /><br />
+	</form>
+	{/if}
+	
+	<hr />
+	<ol>
+	{lo userloop $users}
+		{if $userloop['settype']%2}
+		<li>User: {le friendlyname}, Email: {le email}, Register at: {le registerdate|time:DEFAULTTIME}</li>
+		{else}
+		<li style="font-weight: bold;">User: {le friendlyname}, Email: {le email}, Register at: {le registerdate|time:DEFAULTTIME}</li>
+		{/if}
+	{loelse}
+		You Don't have any user.
+	{/lo}
+	</ol>
+	{pager pager styleclass $curpage $totalpage {$checkvar}/STARTAS/ /ENDAS/}
+{template footer}

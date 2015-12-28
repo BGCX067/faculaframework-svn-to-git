@@ -1,0 +1,11 @@
+	<ul id="errormessage">
+		{lo _ERROR_MESSAGE $ErrorMessages}
+			{if $_ERROR_MESSAGE['Type'] == 'INVALID'}
+				<li class="warning" style="color: #fb5;">{le Message}</li>
+			{elseif $_ERROR_MESSAGE['Type'] == 'ERROR'}
+				<li class="error" style="color: #f10;">{le Message}</li>
+			{elseif $_ERROR_MESSAGE['Type'] == 'INFO'}
+				<li class="info" style="color: #f10;">{le Message}</li>
+			{/if}
+		{/lo}
+	</ul>
